@@ -33,8 +33,18 @@ export default {
   name : "",
   methods: {
     goto(path){
-      // 编程式路由跳转
-      this.$router.replace(path)
+      // 1. 如果点击当前项，没有任何效果
+      // if(path !== this.$route.path){
+      //   // 编程式路由跳转
+      //   this.$router.replace(path)
+      // }
+     //2 如果当前项，刷新界面
+        if(path !== this.$route.path){
+        // 编程式路由跳转
+        this.$router.replace(path)
+      }else{
+        window.location = path //发送一般的http请求 ==>整个页面会刷新显示
+      }
     }
   },
   data() {
@@ -58,6 +68,7 @@ export default {
   bottom: 0;
   height: 50px;
   width: 100%;
+  background #fff
 
   .guide-item 
     display: flex;

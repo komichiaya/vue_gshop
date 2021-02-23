@@ -2,6 +2,7 @@ const path = require("path");
 const px2rem = require("postcss-px2rem"); // postcss的一个插件
 
 module.exports = {
+  productionSourceMap : false, //不生成map 文件
   // 只能写vue封装的配置
 
   runtimeCompiler: true,
